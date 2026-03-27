@@ -54,36 +54,15 @@ default_yolo = true
 
 打开控制面板，需要使用带有网关令牌的链接`http://127.0.0.1:18789/#token=openclaw-1774591025-VOJlVQ6Hg6cwiI8y`（每个人可能不一样）
 
-### 调通第三方的Claude
+然后安排kimi去配置一下API，这里我用了kimi 2.5的API，可以尝试编译一下letax。
 
-把第三方的api-key，模型名称，第三方链接都发给kimi，让它帮我们调通
+### 运行实验
 
 ```shell
-#!/usr/bin/env python3
-"""
-Claude API 测试 (api123.icu)
-模型: claude-sonnet-4-6
-"""
+你现在位于AutoDL的5090上，新版pytorch等一系列环境已经安装好了，网络卡的时候可以用`source /etc/network_turbo`加速。
 
-import requests
-
-API_KEY = "sk-fb8X8N7BMB1C63CJry15ISPIKgmZgtw7ME11GrkRIrg0eSCU"
-URL = "https://api123.icu/v1/chat/completions"
-
-def ask(question):
-    resp = requests.post(URL, headers={
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json"
-    }, json={
-        "model": "claude-sonnet-4-6",
-        "messages": [{"role": "user", "content": question}],
-        "max_tokens": 500
-    }, timeout=30)
-    return resp.json()["choices"][0]["message"]["content"]
-
-# 测试
-if __name__ == "__main__":
-    print(ask("你好！请介绍一下自己。"))
+我最近在复现一个名字叫做FlashInferBench的数据集，是用来测试大模型写算子能力的（写出的算子可以动态插入SGLang），你先去`https://github.com/flashinfer-ai/flashinfer-bench`把它拉下来，读一下README，在作者的所有脚本中，跑一个最小化的。因为我们时间紧迫，所以尽量跑单个示例就行，成功后，把结果写入模板/root/latex/acm-template/minimal-acm.tex，然后运行make clean && make编译，并把输出的pdf重命名为`FlashInferBench最小化实验报告.pdf`，作为你的最终答卷。
 ```
 
-![image-20260327162104144](./assets/image-20260327162104144.png)
+中间可能会偷懒，鞭策他一下，他运行了一个AI写的triton算子和pytorch对比。
+
