@@ -1,0 +1,131 @@
+% 单页 ACM 论文模板
+\documentclass[9pt,twocolumn]{article}
+
+% 页面设置 - 窄边距
+\usepackage[a4paper,margin=0.6in,top=0.5in,bottom=0.5in]{geometry}
+\setlength{\columnsep}{0.2in}
+
+% 字体
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+
+% 数学和图表
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+% 颜色
+\usepackage{xcolor}
+
+% 取消页眉页脚（删除页码）
+\pagestyle{empty}
+
+% 紧凑段落
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% 紧凑标题
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{6pt}{2pt}{\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}{4pt}{1pt}{\bfseries\small}}
+\makeatother
+
+% 紧凑列表
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=12pt}
+
+% 标题格式
+\makeatletter
+\renewcommand{\maketitle}{%
+    \begin{center}
+        {\large\bfseries\@title\par}
+        \vspace{4pt}
+        {\small\@author\par}
+        \vspace{2pt}
+        {\footnotesize\textit{ACM Conference}, March 2025\par}
+        \vspace{4pt}
+        \rule{\linewidth}{0.4pt}
+        \vspace{4pt}
+    \end{center}
+}
+\makeatother
+
+% 摘要
+\renewenvironment{abstract}{%
+    \begin{center}
+    \begin{minipage}{0.95\linewidth}
+    \footnotesize
+}{%
+    \end{minipage}
+    \end{center}
+    \vspace{2pt}
+}
+
+\newcommand{\keywords}[1]{%
+    \vspace{2pt}
+    \noindent{\footnotesize\textbf{Keywords:} #1}
+    \vspace{4pt}
+}
+
+\begin{document}
+
+% 标题
+\title{A Minimal ACM-Style Template}
+\author{Author Name$^1$, Co-Author$^2$\\\small$^1$University A, $^2$University B}
+\maketitle
+
+% 摘要
+\begin{abstract}
+This minimal template provides ACM-style formatting for course reports using only standard LaTeX packages. It fits on a single page while maintaining professional academic appearance.
+\end{abstract}
+
+\keywords{ACM, LaTeX, template, minimal}
+
+% 正文
+\section{Introduction}
+
+This template is designed for quick academic writing when the full \texttt{acmart} class is unavailable. It uses standard packages and fits on one page.
+
+Key features include:
+\begin{itemize}
+    \item Two-column layout matching ACM format
+    \item Times font for professional appearance
+    \item Compact spacing to fit content efficiently
+    \item No complex dependencies required
+\end{itemize}
+
+\section{Methodology}
+
+The template prioritizes simplicity. Equations like $E = mc^2$ and
+\begin{equation}
+    x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{equation}
+are supported. Tables use \texttt{booktabs} for clean formatting:
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{lcr}
+\toprule
+Metric & Value & Unit \\
+\midrule
+Speed & 12.5 & s \\
+Memory & 256 & MB \\
+Accuracy & 95.7 & \% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Conclusion}
+
+This single-page template provides essential ACM formatting without dependencies. It is ready for course reports and can be customized as needed. The source code is clean and easy to modify for specific requirements.
+
+\vspace{4pt}
+\noindent\textbf{References}
+\begin{enumerate}[leftmargin=12pt,itemsep=0pt]
+\footnotesize
+\item[1] ACM. \textit{ACM SIG Proceedings Template}. 2025.
+\item[2] Mittelbach, F. et al. \textit{The LaTeX Companion}. Addison-Wesley, 2004.
+\end{enumerate}
+
+\end{document}
