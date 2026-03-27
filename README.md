@@ -64,5 +64,5 @@ default_yolo = true
 我最近在复现一个名字叫做FlashInferBench的数据集，是用来测试大模型写算子能力的（写出的算子可以动态插入SGLang），你先去`https://github.com/flashinfer-ai/flashinfer-bench`把它拉下来，读一下README，在作者的所有脚本中，跑一个最小化的。因为我们时间紧迫，所以尽量跑单个示例就行，成功后，把结果写入模板/root/latex/acm-template/minimal-acm.tex，然后运行make clean && make编译，并把输出的pdf重命名为`FlashInferBench最小化实验报告.pdf`，作为你的最终答卷。
 ```
 
-中间可能会偷懒，鞭策他一下，他运行了一个AI写的triton算子和pytorch对比。
+中间可能会偷懒，鞭策他一下，防止他自己写算子偷懒，告诉他要对比一个作者的算子和pytorch。
 
